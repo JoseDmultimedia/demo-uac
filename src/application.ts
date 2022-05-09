@@ -13,10 +13,11 @@ import {PasswordHasherBindings, TokenServiceBindings, TokenServiceConstants, Use
 import {BcryptHasher} from './services/hash.password';
 import {MyUserService} from './services/user.service';
 import {JWTService} from './services/jwt-service';
-import {AuthenticationComponent, registerAuthenticationStrategy} from '@loopback/authentication';
+import {AuthenticationBindings, AuthenticationComponent, registerAuthenticationStrategy} from '@loopback/authentication';
 import {AuthorizationComponent, AuthorizationDecision, AuthorizationOptions, AuthorizationTags} from '@loopback/authorization';
 import {JWTAuthenticationComponent, SECURITY_SCHEME_SPEC} from '@loopback/authentication-jwt';
 import {JWTStrategy} from './authentication-strategies/jwt-strategy';
+import {MyAuthStrategyProvider} from './authentication-strategies/auth-strategy-provider';
 // import KeycloakAuthorizationProvider from './services/basic-authorizer.service';
 
 export {ApplicationConfig};
@@ -34,6 +35,7 @@ export class DemoUacApplication extends BootMixin(
     //this.bind(TokenServiceBindings.TOKEN_SERVICE).toClass( JWTService );
 
     this.component(AuthorizationComponent);
+
 
 
     // const authoptions: AuthorizationOptions = {
