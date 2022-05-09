@@ -37,7 +37,7 @@ export class User extends Entity {
     type: 'array',
     itemType: 'string',
   })
-  roles?: string[];
+  role: string[];
 
 
   constructor(data?: Partial<User>) {

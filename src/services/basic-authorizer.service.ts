@@ -20,10 +20,10 @@ export async function basicAuthorization(
     const user = _.pick(authorizationCtx.principals[0], [
       'id',
       'name',
-      'roles',
+      'role',
     ]);
     console.log('Se supone que user se forma con autorizationCtx'+JSON.stringify(user))
-    currentUser = {[securityId]: user.id, name: user.name, roles: user.roles};
+    currentUser = {[securityId]: user.id, name: user.name, roles: user.role};
     console.log(`CurrentUser deberia tener todos los datos del token ${JSON.stringify(currentUser)}`);
     console.log('user mostraria su rol', authorizationCtx.roles);
   } else {

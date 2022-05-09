@@ -43,8 +43,8 @@ export class MyUserService implements UserService<User, Credentials>{
       [securityId]: user.id!.toString(),
       name: completeName,
       id: user.id,
+      role: user.role,
       email: user.email,
-      roles: user.roles,
     };
   }
 }
